@@ -2,7 +2,9 @@
 
 # Restaurant Controller
 class RestaurantsController < ApplicationController
-  def index; end
+  def index
+    @restaurants = Restaurant.all
+  end
 
   def show; end
 
