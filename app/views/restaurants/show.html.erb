@@ -2,4 +2,10 @@
 <p>address: <%= @restaurant.address %></p>
 <p>phone number: <%= @restaurant.phone_number %></p>
 <p>category: <%= @restaurant.category %></p>
+<%= render '/reviews/form', restaurant: @restaurant, review: @review%>
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li><%= "#{review.content} | #{review.rating} "%></li>
+  <%end %>
+</ul>
 <%= link_to 'Back', restaurants_path %>
