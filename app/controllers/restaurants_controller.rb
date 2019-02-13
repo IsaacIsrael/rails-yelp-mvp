@@ -10,7 +10,9 @@ class RestaurantsController < ApplicationController
 
   def show; end
 
-  def new; end
+  def new
+    @restaurant = Restaurant.new
+  end
 
   def create; end
 

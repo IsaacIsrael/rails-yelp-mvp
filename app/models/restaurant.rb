@@ -6,9 +6,9 @@ class Restaurant < ApplicationRecord
 
   validates :name, presence: true
   validates :address, presence: true
-  validates :category, inclusion: { in: %w[chinese
-                                           italian
-                                           japanese
-                                           french
-                                           belgian] }
+  validates :category, inclusion: { in: Restaurant.category }
+
+  def self.category
+    %w[chinese italian japanese french belgian]
+  end
 end
