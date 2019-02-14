@@ -9,6 +9,10 @@ class Review < ApplicationRecord
                       numericality: { only_integer: true }
 
   def self.rating_range
-    [*(0..5)]
+    [[5], [4], [3], [2], [1]]
+  end
+
+  def date
+    created_at.strftime('%d/%m/%Y - %H:%M')
   end
 end

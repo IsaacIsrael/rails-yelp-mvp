@@ -1,0 +1,21 @@
+.header{
+  display: flex;
+  align-items: center;
+  margin: 25px 0 ;
+}
+.header-body{
+  flex-grow:1;
+}
+.header h1{
+  margin: 0;
+}
+.header-body p {
+  font-size: medium;
+  font-weight: lighter;
+  font-style: italic;
+}
+.header .actions{
+  flex-basis: 7vw;
+}
+
+

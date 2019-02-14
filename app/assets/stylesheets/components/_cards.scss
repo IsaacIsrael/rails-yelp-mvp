@@ -1,0 +1,33 @@
+.card{
+  background-size: cover;
+  border-radius: 10px;
+  border: 1px solid #dedede;
+  box-shadow: 2px 2px 4px #dddddd;
+  color: white;
+  height: 320px;
+  margin-bottom: 30px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.card-header{
+  bottom: 1em;
+  left: 1em;
+  position: absolute;
+}
+
+.card-link{
+  background: black;
+  bottom: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+.card-link:hover {
+  opacity: 0.3;
+}
+
+
+

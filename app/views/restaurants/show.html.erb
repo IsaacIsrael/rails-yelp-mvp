@@ -1,11 +1,35 @@
-<h1><%= @restaurant.name %></h1>
-<p>address: <%= @restaurant.address %></p>
-<p>phone number: <%= @restaurant.phone_number %></p>
-<p>category: <%= @restaurant.category %></p>
-<%= render '/reviews/form', restaurant: @restaurant, review: @review%>
-<ul>
-  <% @restaurant.reviews.each do |review| %>
-    <li><%= "#{review.content} | #{review.rating} "%></li>
-  <%end %>
-</ul>
-<%= link_to 'Back', restaurants_path %>
+<header class="header">
+  <div class="header-body"> <h1><%= @restaurant.name %></h1>
+    <p><%= @restaurant.category %></p>
+  </div>
+  <div class="actions text-right">
+    <%= link_to raw('<i class="fas fa-chevron-left"></i> Back'), restaurants_path %>
+  </div>
+</header>
+
+<div class="info">
+  <p><i class="fas fa-phone"></i> <%= @restaurant.phone_number %></p>
+  <p><i class="fas fa-map-marker-alt"></i> <%= @restaurant.address %></p>
+</div>
+<iframe class="map" id="gmap_canvas" src="https://maps.google.com/maps?q=<%= @restaurant.address %>&t=&z=20&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+
+
+<section class="review">
+  <h2>Reviews</h2>
+  <%= render '/reviews/form', restaurant: @restaurant, review: @review%>
+  <ul class="list">
+    <% @restaurant.reviews_sort_date.each do |review| %>
+      <li>
+        <div class="list-body">
+          <span><%= review.date %></span>
+          <p><%= review.content%></p>
+        </div>
+        <div>
+          <%5.times do |i| %>
+            <i class="start <%= i <= review.rating ? 'fas': 'far'%> fa-star"></i>
+          <% end %>
+        </div>
+        </li>
+    <%end %>
+  </ul>
+</section>

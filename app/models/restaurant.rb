@@ -12,4 +12,8 @@ class Restaurant < ApplicationRecord
   def self.categories
     %w[chinese italian japanese french belgian]
   end
+
+  def reviews_sort_date
+    reviews.reverse
+  end
 end

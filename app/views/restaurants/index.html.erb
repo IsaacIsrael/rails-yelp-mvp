@@ -1,7 +1,17 @@
-<h1>Restaurants</h1>
-<ul>
+<header class="header">
+  <h1>Restaurants</h1>
+</header>
+
+<div class="row">
   <%@restaurants.each do |restaurant|%>
-    <li><%= link_to restaurant.name, restaurant %></li>
-  <%end %>
-</ul>
-<%= link_to 'New', new_restaurant_path %>
+    <div class="col-xs-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('https://source.unsplash.com/800x450/?restaurants');">
+        <h2 class="card-header"><%= restaurant.name %></h2>
+        <%= link_to  '', restaurant, class: "card-link" %>
+      </div>
+    </div>
+ <%end %>
+</div>
+
+<%= link_to raw('<i class="fas fa-plus"></i>'), new_restaurant_path, class: "btn flat-button" %>
+

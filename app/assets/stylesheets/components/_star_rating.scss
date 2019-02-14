@@ -1,0 +1,48 @@
+$color-cheked: #e8d255;
+$color-uncheked: #888;
+
+.stars {
+  font-size: 0;
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  * {
+    font-size: 1.9rem;
+  }
+  label {
+    cursor: pointer;
+    width: 2em;
+    &:before {
+      content: "\f005";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 400;
+      color: $color-uncheked;
+    }
+  }
+  input{
+    display: none;
+
+    &:checked ~ label:before,
+    & + label:hover ~ label:before,
+    & + label:hover:before
+    {
+      font-family: "Font Awesome 5 Free";
+      color: $color-cheked;
+      font-weight: 900;
+    }
+  }
+  &:hover > input + label:before {
+    color: $color-uncheked;
+  }
+  &:hover > input + label:hover ~ label:before,
+  &:hover > input + label:hover:before {
+    color: $color-cheked;
+  }
+}
+
+.start.fas{
+  color: $color-cheked;
+}
+
+.start.far{
+  color: $color-uncheked;
+}

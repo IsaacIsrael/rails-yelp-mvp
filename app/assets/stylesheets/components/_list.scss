@@ -1,0 +1,16 @@
+.list{
+  list-style-type: none;
+  padding: 0;
+}
+.list li{
+  border-bottom: 1px solid #dedede;
+  margin-top: 5px;
+  padding: 20px;
+  display: flex;
+}
+.list li:last-child{
+  border-bottom: none;
+}
+.list-body{
+  flex-grow: 1;
+}

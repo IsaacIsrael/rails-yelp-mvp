@@ -1,7 +1,9 @@
-<%= simple_form_for (@restaurant) do |f| %>
+<%= simple_form_for @restaurant, :html=> { class: 'form' } do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.input :phone_number %>
   <%= f.input :category, collection: Restaurant.categories %>
-  <%= f.submit %>
+  <div class="actions text-right">
+    <%= f.submit "Create", class: "btn btn-primary" %>
+  </div>
 <% end %>
